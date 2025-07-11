@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style>
+	 * {
+         margin: 0; 
+	     padding: 0; 
+	     border: 0; 
+	     outline: none;
+	}
+
+     body {	
+	     font-family: 'Courier New', Courier, monospace;
+	     font-size: 16px;
+	     color:#000000;
+	     line-height: 20px;
+	     text-align:left;
+	}
+
+td,th {
+	     font-family: 'Courier New', Courier, monospace;
+	     font-size: 16px;
+	     color: #000000;
+	}
+
+a {
+	     color: #000000;
+	} 
+
+a:link {
+	     text-decoration: none;
+	}
+
+ul,li{
+	     list-style-type:none;
+	}
+
+.clearit{
+	     clear:both;
+	}
+
+.top {
+	      width:100%; 
+	     height:35px; 
+	     overflow:hidden; 
+	     background: #552e0f; 
+	     line-height:38px;
+	}
+
+.zhuan {
+	     width:1000px; 
+	     margin:0 auto;
+	}
+
+.zhuan ul {
+	     width:800px; 
+	     float: right;
+	}
+
+.zhuan  li {
+	     width:100px; 
+	     float: right ;
+	     text-align:center;
+	}
+
+.zhuan a {
+	     color: #ffffff; 
+	}
+
+.zhuan A:hover{ 
+	     color:#000000;
+	}
+
+.lg {
+	     width:100%; 
+	     height:110px; 
+	     overflow:hidden; 
+		 /* 超出部分被隐藏 */
+	     background:#d3ae7a;
+	}
+
+.sou {
+	     width:700px; 
+	     float:left;
+	}
+
+	.sou input{
+	     width:450px; 
+	     height:35px; 
+	     float:left; 
+	     margin-left:200px; 
+	     border:2px solid#a14502; 
+	     margin-top:35px;width:350px;
+         border-radius:25px;/*圆角边框*/
+	}
+
+     .sou p{
+	     width:70px;
+	     float:left; 
+	     height:39px;
+	     background:#a14502; 
+	     margin-top:35px; 
+	     text-align:center; 
+	     line-height:39px;
+		 border-radius:25px;
+	}
+
+.sou a { 
+	     font-size:14px;
+	}
+
+.dao {
+	     width:1000px; 
+	     margin:0 auto; 
+	     height:60px; 
+	     line-height:60px; 
+	     overflow: hidden;
+	}
+
+.dao li {
+	     width:150px; 
+	     float:left; 
+	     margin-left:10px;
+	} 
+
+.dao a {
+	     font-size:20px; 
+	     font-weight:bold;
+	}
+
+.dao a:hover{ 
+	     color: #c2946f;
+	}
+	/* 主体部分 */
+.fl{
+     float:left;
+}
+.fr{
+     float:right;
+}
+
+.lan{
+  	 width:1000px;
+     height:40px;
+     margin:0 auto;
+}
+
+.lan a{
+	 line-height:40px;
+	 color:#552e0f;
+	}
+
+.lan a:hover{
+	 color:#ff8800;
+	}
+
+.lan span{
+	 line-height:40px;
+	 color:#666;
+	 padding:0 5px;
+	}
+
+
+.goods_detail_con{
+	 width:998px;
+	 height:398px;
+	 border:1px solid #ededed;
+	 margin:0 auto 20px;
+}
+
+.goods_detail_list{
+	width:530px;
+	height:350px;
+	margin:24px 24px 0 0;
+}
+
+.goods_detail_list h3{
+	 font-size:24px;
+	 line-height:24px;
+	 color:#666;
+	 font-weight:normal;
+	}
+
+.goods_detail_list p{
+	 color:#666;
+	 line-height:40px;
+	}
+
+.prize_bar{
+	 height:72px;
+	 background-color:#fff5f5;
+	 line-height:72px;
+	}
+
+.prize_bar .show_pirze{
+	 font-size:20px;
+	 color:#ff3e3e;
+	 padding-left:20px;
+	}
+
+.prize_bar .show_pirze em{
+	 font-style:normal;
+	 font-size:36px;
+	 padding-left:10px;
+	}
+
+.prize_bar .show_unit{
+	padding-left:150px;
+}
+
+.goods_num{
+	 height:52px;
+	 margin-top:19px;
+	}
+
+.goods_num .num_name{
+	 width:70px;
+	 height:52px;
+	 line-height:52px;
+	}
+
+.goods_num .num_add{
+	 width:75px;
+	 height:50px;
+	 border:1px solid #dddddd;
+	}
+
+.goods_num .num_add input{
+	 width:49px;
+	 height:50px;
+	 text-align:center;
+	 line-height:50px;
+	 border:0px;
+	 outline:none;
+	 font-size:14px;
+	 color:#666;
+	}
+
+.goods_num .num_add .add,.goods_num .num_add .minus{
+	 width:25px;
+	 line-height:25px;
+	 text-align:center;
+	 border-left:1px solid #ddd;
+	 border-bottom:1px solid #ddd;
+	 color:#666;
+	 font-size:14px;
+	}
+
+.goods_num .num_add .minus{
+	border-bottom:0px;
+}
+
+.total{
+	 height:35px;
+	 line-height:35px;
+	 margin-top:25px;
+	}
+
+.total em{
+	 font-style:normal;
+	 color:#ff3e3e;
+	 font-size:18px;
+	}
+
+
+.operate_btn{
+	 height:40px;
+	 margin-top:35px;
+	 font-size:0;
+	 position:relative;
+	}
+
+.operate_btn .buy_btn,.operate_btn .add_cart{
+	 display:inline-block;
+	 width:178px;
+	 height:38px;
+	 border:1px solid #c40000;
+	 font-size:14px;
+	 color:#c40000;
+	 line-height:38px;
+	 text-align:center;
+	 background-color:#ffeded;
+	}
+
+.operate_btn .add_cart{
+	 background-color:#c40000;
+	 color:#fff;
+	 margin-left:10px;
+	 position:relative;
+	 z-index:10;
+	}
+
+.detail_tab{
+	 height:35px;
+	 border-bottom:1px solid #552e0f;
+}
+
+.detail_tab li{
+	 height:34px;
+	 line-height:34px;
+	 padding:0 30px;
+	 font-size:14px;
+	 color:#333333;
+	 float:left;
+	 border:1px solid #e8e8e8;
+	 border-bottom:0px;
+	 cursor:pointer;
+	 background-color:#faf8f8;
+	}
+
+.detail_tab li.active{
+	 border-top:2px solid #552e0f;
+	 position:relative;
+	 background-color:#fff;
+	 border-left:1px solid #552e0f;
+	 border-right:1px solid #552e0f;
+	 top:-1px;
+	 height:35px;
+	}
+	/* 对于新书推荐的线设置 */
+.tab_content dd{
+	 line-height:24px;
+	 margin-top:5px;
+	}
+.main_wrap{
+	 width:1000px;
+	 margin:0 auto;
+	}
+
+.l_wrap{
+	width:200px;
+}
+
+.r_wrap{
+	width:780px;
+}
+.new_goods{
+	 border:1px solid #ededed;
+	 border-top:2px solid #552e0f;
+	 padding-bottom:10px;
+}
+
+.new_goods h3{
+	 height:33px;
+	 line-height:33px;
+	 background-color:#fcfcfc;
+	 border-bottom:1px solid #ededed;
+	 font-size:14px;
+	 font-weight:normal;
+	 text-indent:10px;
+}
+
+.new_goods ul{
+	 width:160px;
+	 margin:0 auto;
+	 overflow:hidden;
+	}
+
+.new_goods li{
+	 border-bottom:1px solid #ededed;
+	 margin-bottom:-1px;
+	}
+
+.new_goods li img{
+	 display:block;
+	 width:150px;
+	 height:150px;
+	 margin:10px auto;
+	}
+
+.new_goods li h4{
+	 width:160px;
+	 margin:0 auto;
+	}
+
+.new_goods li h4 a{
+	 font-weight:normal;
+	 color:#666;
+	 display:block;
+	 width:160px;
+	 overflow:hidden;
+	 white-space:nowrap;
+	 text-overflow:ellipsis;
+	}
+
+.new_goods li .prize{
+	 font-size:14px;
+	 color:#da260e;
+	 margin:10px auto;
+	}
+
+	.foot {
+	     width:100%; 
+	     height:70px; 
+	     overflow:hidden; 
+	     margin-top: 30px; 
+	     text-align:center; 
+     	 line-height:70px; 
+	     background:#d3ae7a; 
+	     font-size:16px; 
+	     font-weight:bold; 
+	     color:#FFF;
+	} 
+	</style>
+</head>
+<body>
+    <div class="top">
+        <div class="zhuan">
+            <ul>
+                <li><a href="./购物车-左佳怡.html">购物车</a></li>
+                <li><a href="./注册-宋莉.html">注册</a></li>
+                <li><a href="./登陆-蒲玲玲.html">登录</a></li>
+            </ul>
+        </div>
+        <div class="clearit"></div>
+    </div>
+
+    <div class="lg">
+        <div class="zhuan">
+            <div class="sou"><input name="" type="text" />
+                <p><a href="#">搜索</a></p>
+            </div>
+        </div>
+        <div class="clearit"></div>
+    </div>
+
+    <div class="dao">
+        <ul>
+            <li><a href="./首页-张丹丹.html">首页</a></li>
+            <li><a href="./书店-左佳怡.html">书店区</a></li>
+            <li><a href="./作家-张丹丹.html">作家区</a></li>
+            <li><a href="./新书-蒲玲玲.html">新书</a></li>
+            <li><a href="./资讯-张晨曦.html">资讯</a></li>
+			
+        </ul>
+    </div>
+
+    <div class="lan">
+		<a href="#">全部分类</a>
+		<span>&gt;</span>
+		<a href="#">书店区</a>
+		<span>&gt;</span>
+		<a href="#">书籍信息</a>
+	</div>
+    <div class="goods_detail_con clearfix">
+		<img src="./书籍/小王子2.jpg" alt="" width="30%" height="70%"style=
+		"margin-top:60px">
+		<div class="goods_detail_list fr">
+			<h3>小王子</h3>
+			<p>安托万.德.圣-埃克苏佩里 著</p>
+			<div class="prize_bar">
+				<span class="show_pirze">¥<em>45.00</em></span>
+				<span class="show_unit">单  位：本</span>
+			</div>
+			<div class="goods_num clearfix">
+				<div class="num_name fl">数 量：</div>
+				<div class="num_add fl">
+					<input type="text" class="num_show fl" value="1">
+					<!-- 插入文本框 -->
+					<a href="#" class="add fr">+</a>
+					<a href="#" class="minus fr">-</a>	
+				</div> 
+			</div>
+			<div class="total">总价：<em>45.00元</em></div>
+	<div class="operate_btn">
+				<a href="订单.html" class="buy_btn">立即购买</a>
+				<a href="./购物车-左佳怡.html" class="add_cart" id="add_cart">加入购物车</a>				
+			</div>
+		</div>
+	</div>
+    <div class="main_wrap clearfix">
+		<div class="l_wrap fl clearfix">
+			<!-- 整个盒子清除浮动 -->
+			<div class="new_goods">
+				<h3>新书推荐</h3>
+				<ul>
+					<li>
+						<a href="#"><img src="./书籍/活着.jpg"></a>
+						<h4><a href="#">活着</a></h4>
+						<div class="prize">￥40.00</div>
+					</li>
+					<li>
+						<a href="#"><img src="./书籍/云边有个小卖部.jpg"></a>
+						<h4><a href="#">云边有个小卖部</a></h4>
+						<div class="prize">￥26.80</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="r_wrap fr clearfix">
+			<ul class="detail_tab clearfix">
+				<li class="active">商品介绍</li>
+				<li><a href="./评论-张晨曦.html">评论</a></li>
+			</ul>
+
+			<div class="tab_content">
+					<dd>
+						<img src="./书籍/小王子.png" style="width:80%;">
+					</dd>
+			</div>
+
+		</div>
+	</div>
+    <div class="foot">止于书屋</div>
+</body>
+
+</html>
